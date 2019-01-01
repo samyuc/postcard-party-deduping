@@ -57,36 +57,6 @@ To do so, I parsed each separate word in the name column in Microsoft Excel  to 
 
 I combined all the separate spreadsheets in formats B and C into two tables in Microsoft Access and imported the master spreadsheet as a third table. 
 
-To catch all of the exact matches, I ran the following queries:
-
-SELECT FB.Name1, FB.Address, PM.Name1, PM.City, PM.State, PM.Zip5, PM.Zip4, PM.Address
-FROM [Format B ] AS FB, [Postcard Party Master] AS PM
-WHERE (((FB.Name1)=[PM].[Name1]) AND ((FB.Address)=[PM].[Address]) AND ((FB.Zip5)=[PM].[Zip5]) AND ((FB.City)=[PM].[City]) AND ((FB.State)=[PM].[State]));
-
-SELECT FC.Name1, FB.Address, PM.Name1, PM.City, PM.State, PM.Zip5, PM.Zip4, PM.Address
-FROM [Format C ] AS FB, [Postcard Party Master] AS PM
-WHERE (((FC.Name1)=[PM].[Name1]) AND ((FC.Address)=[PM].[Address]) AND ((FC.Zip5)=[PM].[Zip5]) AND ((FC.City)=[PM].[City]) AND ((FC.State)=[PM].[State]));
-
-These queries alone caught 3000 duplicates between the master file and the addresses already sent to volunteers. 
-Following this, I used the two identifiers to find other duplicates. 
-
-SELECT FB.ID, FB.Name1, FB.Address,  FB.Zip5, PM1.Name1, PM1.Address, PM1.Zip5, PM1.ID
-FROM [Format B ] AS FB, [Postcard Party Master] AS PM1
-WHERE NOT EXISTS
-(SELECT Name1 
-FROM [Postcard Party Master] AS PM
-WHERE FB.Name1 = PM.Name1) and
-(PM1.Address=FB.Address AND
-PM1.Zip5=FB.Zip5) 
-UNION ALL SELECT FB.ID, FB.Name1, FB.Address,  FB.Zip5, PM1.Name1, PM1.Address, PM1.Zip5, PM1.ID
-FROM [Format B ] AS FB, [Postcard Party Master] AS PM1
-WHERE FB.Name1 = PM1.Name1 AND 
-FB.Address = PM1.Address AND 
-FB.Zip5 = PM1.Zip5 AND
-FB.City = PM1.City AND 
-FB.State = PM1.State
-ORDER BY FB.ID;
-
-This method was repeated with the Format C names. New tables of the matches were created from these two queries. 
+To catch all of the exact matches, I ran queries 1 and 2 in the query sheet. These queries alone caught 3000 duplicates between the master file and the addresses already sent to volunteers. Following this, I used the address-zipcode identifier to find other duplicates. This method was repeated with the Format C names. New tables of the matches were created from these two queries. 
 
 

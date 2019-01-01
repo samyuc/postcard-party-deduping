@@ -1,5 +1,5 @@
 # postcard-party-deduping
-Problem 
+## Problem 
 Over the summer of 2018, I helped with the James Smith campaign’s Postcard Party Initiative. The staff received almost 100,000 names and addresses of registered voters who had voted for Democrats in the past but had not voted recently. This demographic was being targeted by the campaign’s GOTV efforts, and volunteers who wanted to hold Postcard Parties to send postcards to hundreds of these voters were assigned a couple hundred names at a time. Because the campaign was already at a fundraising disadvantage, the campaign wanted to ensure that all unique voters received a postcard before duplicates were sent out to make the most of donor money. 
 This project contains sensitive information (voter names and addresses), so the files themselves cannot be shared. However, I will explain the methodology of how I deduplicated these spreadsheets.
 The information came in three different formats:
@@ -9,15 +9,16 @@ A.	Master document format. This was the file of addresses that needed to be assi
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | John M. Doe   | Greenville  | SC | 29208 | 3725 | 16 Main St |
 | Jane Roberts | Mauldin | SC | 29206 | 3145	| PO Box #7274 |
-|John R. Doe | Simpsonville	| SC	29201	|3266	| PO Box #7274 |
+|John R. Doe | Simpsonville	| SC	| 29201	|3266	| PO Box #7274 |
 
 This file was given to the new staff members by the campaign manager who had previously been handling data in one of the two following formats.
 B.	Before the postcard party initiative was handled by the staff members that I was working with, the campaign manager sent out names in individual Excel documents to volunteers in two different ways. The following method is very similar to the format of the master document, with the main difference being the presence of a unique VANID identifier. 
 
-VANID	Name	City	State	Five Digit Zip	Four Digit Zip	Address
-11111	John M. Doe	Greenville	SC	29208	3725	16 Main St
-22222	Jane Roberts	Mauldin	SC	29206	3145	PO Box #7274
-33333	Dorothy Adams	Simpsonville	SC	29201	3266	PO Box #7274
+| VANID	| Name | City | State | Five Digit Zip | Four Digit Zip | Address |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+|11111	| John M. Doe	| Greenville |	SC |	29208	| 3725	| 16 Main St |
+|22222	| Jane Roberts | Mauldin |	SC	| 29206 |	3145 |	PO Box #7274 |
+|33333	| Dorothy Adams |	Simpsonville | SC	| 29201	| 3266	| PO Box #7274 |
 
 C.	The campaign manager also previously sent names to volunteers in the following way:
 

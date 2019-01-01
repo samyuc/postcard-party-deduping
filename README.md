@@ -50,7 +50,7 @@ When trying to compile these three separate files into one document, it becomes 
 2)	We cannot use address alone as an identifier because cases like Jane Roberts’s address vs John Doe’s address, where the difference lies in a zipcode or city, would not be handled correctly. 
 3)	We cannot use name AND address alone because cases like John M. Doe at 16 Main St vs John Doe at 16 Main St would not be flagged as the same person. 
 
-##Solution
+## Solution
 In order to account for all of these conditions, I created two unique IDs, one based on name and address, and one based on address and zipcode. This second identifier was especially useful in handling the second and third cases listed above. 
 
 To do so, I parsed each separate word in the name column in Microsoft Excel  to separate first, middle, and last names, and to check for cases where appropriate formatting was not followed. I checked that formatting was followed by checking the number of columns a name took up (if it had more than 4 words, it was typically incorrectly formatted). I also created a new name field called Name1 for Format C, where first and last name were separated, by concatenating first and last name. 

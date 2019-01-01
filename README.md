@@ -5,6 +5,11 @@ This project contains sensitive information (voter names and addresses), so the 
 The information came in three different formats:
 A.	Master document format. This was the file of addresses that needed to be assigned to volunteers, and this spreadsheet contained the 97,000 names and addresses in the following format. 
 
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
 |Name	| City	| State	| Five Digit Zip	| Four Digit Zip |	Address |
 ----------------------------------------------------------
 |John M. Doe Greenville SC 29208 3725 16 Main St |

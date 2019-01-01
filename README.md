@@ -7,8 +7,8 @@ A.	Master document format. This was the file of addresses that needed to be assi
 
 |Name	| City	| State	| Five Digit Zip	| Four Digit Zip |	Address |
 ----------------------------------------------------------
-|John M. Doe	| Greenville |	SC	| 29208 |	3725	| 16 Main St |
-|Jane Roberts	| Mauldin	| SC	| 29206	| 3145	| PO Box #7274 |
+|John M. Doe Greenville SC 29208 3725 16 Main St |
+|Jane Roberts Mauldin SC 29206 3145	PO Box #7274 |
 |John R. Doe | Simpsonville	| SC	29201	|3266	| PO Box #7274 |
 This file was given to the new staff members by the campaign manager who had previously been handling data in one of the two following formats.
 B.	Before the postcard party initiative was handled by the staff members that I was working with, the campaign manager sent out names in individual Excel documents to volunteers in two different ways. The following method is very similar to the format of the master document, with the main difference being the presence of a unique VANID identifier. 

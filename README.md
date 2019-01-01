@@ -51,13 +51,14 @@ When trying to compile these three separate files into one document, it becomes 
 3)	We cannot use name AND address alone because cases like John M. Doe at 16 Main St vs John Doe at 16 Main St would not be flagged as the same person. 
 
 ## Solution
-In order to account for all of these conditions, I created two unique IDs, one based on name and address, and one based on address and zipcode. This second identifier was especially useful in handling the second and third cases listed above. 
+In order to account for all of these conditions, I created two unique IDs, one based on name and address, and one based on address and zipcode. The first identifier caught all of the cases where the names were exact matches, and the second identifier caught cases where the names were not exact (typically a middle initial difference or incorrect formatting) or where two addresses were the same but had different zipcodes. 
 
 To do so, I parsed each separate word in the name column in Microsoft Excel  to separate first, middle, and last names, and to check for cases where appropriate formatting was not followed. I checked that formatting was followed by checking the number of columns a name took up (if it had more than 4 words, it was typically incorrectly formatted). I also created a new name field called Name1 for Format C, where first and last name were separated, by concatenating first and last name. 
 
 I combined all the separate spreadsheets in formats B and C into two tables in Microsoft Access and imported the master spreadsheet as a third table. 
 
 To catch all of the exact matches, I ran the following queries:
+
 SELECT FB.Name1, FB.Address, PM.Name1, PM.City, PM.State, PM.Zip5, PM.Zip4, PM.Address
 FROM [Format B ] AS FB, [Postcard Party Master] AS PM
 WHERE (((FB.Name1)=[PM].[Name1]) AND ((FB.Address)=[PM].[Address]) AND ((FB.Zip5)=[PM].[Zip5]) AND ((FB.City)=[PM].[City]) AND ((FB.State)=[PM].[State]));

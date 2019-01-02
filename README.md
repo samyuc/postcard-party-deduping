@@ -57,6 +57,7 @@ To do so, I parsed each separate word in the name column in Microsoft Excel  to 
 
 I combined all the separate spreadsheets in formats B and C into two tables in Microsoft Access and imported the master spreadsheet as a third table. 
 
-To catch all of the exact matches, I ran queries 1 and 2 in the query sheet. These queries alone caught 3000 duplicates between the master file and the addresses already sent to volunteers. Following this, I used the address-zipcode identifier to find other duplicates. This method was repeated with the Format C names. New tables of the matches were created from these two queries. 
+To catch all of the exact matches, I ran queries 1 and 2 in the query sheet. These queries alone caught 3000 duplicates between the master file and the addresses already sent to volunteers. Following this, I used the address-zipcode identifier to find other duplicates (queries 3 and 4). This method was repeated with the Format C names. New tables of the matches were created from these two queries. 
 
+After these queries were constructed to remove as many duplicates as possible, the information was then put back into a spreadsheet for staff to use. I used color formatting and filters, and I taught the staff how to use the filters to extract the information they wanted from the spreadsheet. Certain names were sent to multiple volunteers (because the names were already sent prior to the deduplication), but my efforts did prevent approximately 2000 names from being sent out a second time. 
 
